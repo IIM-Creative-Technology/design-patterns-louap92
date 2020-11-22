@@ -1,17 +1,41 @@
-let movieMovie =(function(){
+let moduleMovie = (function () {
 
     let title
-    let year
 
-    return{
-        setTitle(titleParam){
-            title=titleParam
+    return {
+        setTitle(titleParam) {
+            title = titleParam
         },
-        getTitle(){
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        setTitle(titleParam) {
+            title = titleParam
+        },
+        getTitle() {
             return title
         }
     }
+
 })()
 
 moduleMovie.setTitle('Titanic')
-console.log(movieMovie.getTitle())
+moduleMovie.setTitle1('Titanic')
+moduleMovie.setTitle2('Titanic')
+moduleMovie.setTitle3('Titanic')
+moduleMovie.setTitle4('Titanic')
+moduleMovie.setTitle4('Titanic')
+moduleMovie.setTitle5('Titanic')
+console.log(moduleMovie.getTitle())

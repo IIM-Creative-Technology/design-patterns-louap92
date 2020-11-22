@@ -1,6 +1,6 @@
-let singletonShopList = (function(){
+let singletonShopList = (function () {
 
-    let instance 
+    let instance
 
     function init() {
 
@@ -12,7 +12,7 @@ let singletonShopList = (function(){
 
         function addItem(item, quantity) {
 
-            if(typeof quantity !== "number"){
+            if (typeof quantity !== 'number') {
                 throw new Error('Quantity must be a number')
             }
 
@@ -27,18 +27,17 @@ let singletonShopList = (function(){
         }
 
         function removeItem(item) {
-            list.forEach(function(listItem) {
-                if(ListItem.item === item){
+            list.forEach(function (listItem) {
+                if (listItem.item === item) {
                     delete list[list.indexOf(listItem)]
                 }
             })
         }
 
-        return{
+        return {
             getList: getList,
-            getNumberOfItem: function() {
+            getNumberOfItems: function () {
                 return list.length
-                
             },
             addItem: addItem,
             cleanList: cleanList,
@@ -46,35 +45,31 @@ let singletonShopList = (function(){
         }
     }
 
-    function getInstance (){
-    
-        if (!instance){
-            instance = init()
+    function getInstance() {
 
+        if (!instance) { // same as if (instance === undefined)
+            instance = init()
         }
 
         return instance
-
     }
 
-    return{
+    return {
         getInstance: getInstance
     }
-
 })()
 
 let shopList = singletonShopList
 
-
-shopList.getInstance().addItem('pates', 2)
-shopList.getInstance().addItem('PQ', 6)
 shopList.getInstance().addItem('riz', 1)
+shopList.getInstance().addItem('PQ', 6)
+shopList.getInstance().addItem('gateaux', 2)
 
-console.log('items in shop list: ',shopList.getInstance().getNumberOfItems())
+console.log('items in shop list : ', shopList.getInstance().getNumberOfItems())
 console.table(shopList.getInstance().getList())
 
 // going to shopping
 console.log('going to shop...')
-shopList.getInstance(), removeItem('PQ')
-console.log('items: ',shopList.getInstance().getNumberOfItems())
+shopList.getInstance().removeItem('PQ')
+console.log('items: ', shopList.getInstance().getNumberOfItems())
 console.table(shopList.getInstance().getList())
